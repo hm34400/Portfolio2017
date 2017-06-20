@@ -1,7 +1,12 @@
 <?php
 
-class KnowledgeModel extends CrudModel{
-    
+class KnowledgeModel extends CI_Model{
+    public function __construct() {
+        parent::__construct();
+        $this->load->database();
+    }
+
+
     public function add($object){
         
     }
@@ -12,8 +17,7 @@ class KnowledgeModel extends CrudModel{
         
     }
     public function getAll(){
-        $sql = "SELECT * FROM knowledge";
-        $query = $this->db->query($sql);
+        $query = $this->db->query("SELECT * FROM Knowledge");
         return $query->result_array();
     }
     public function update($object){
