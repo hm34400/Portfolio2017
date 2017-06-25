@@ -1,6 +1,6 @@
 <?php
 
-class BackgroundModel extends CrudModel{
+class BackgroundModel extends CI_Model{
     
     public function add($object){
         
@@ -12,7 +12,7 @@ class BackgroundModel extends CrudModel{
         
     }
     public function getAll(){
-        $sql = "SELECT * FROM knowledge";
+        $sql = "SELECT * FROM Background";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
